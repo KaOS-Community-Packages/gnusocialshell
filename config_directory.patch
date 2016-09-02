@@ -1,0 +1,14 @@
+--- a/Makefile	2016-09-01 22:44:20.557146017 +0200
++++ b/Makefile	2016-09-01 23:55:09.561438733 +0200
+@@ -8,10 +8,7 @@
+ 	$(CC) $(FLAGS) $(OBJS) -o $(OBJ_NAME) $(LIBCURL)
+ install:
+ 	$(CC) $(FLAGS) $(OBJS) -o $(OBJ_NAME) $(LIBCURL)
+-	rm -rf $(HOME)/.config/gnusocialshell
+-	mkdir $(HOME)/.config/gnusocialshell
+-	install -Dm644 config $(DESTDIR)$(HOME)/.config/gnusocialshell/gnusocialshell.conf
++	install -Dm644 config $(DESTDIR)/etc/gnusocialshell.conf
+ 	install -Dm755 gnusocialshell $(DESTDIR)/usr/bin/gnusocialshell
+-	chmod -R 777 $(HOME)/.config/gnusocialshell
+ clean:
+ rm $(OBJ_NAME)
